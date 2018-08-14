@@ -8,9 +8,17 @@ runtime:
 build:
  ci:
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential protobuf-compiler python \
-                     libprotobuf-dev libcurl4-openssl-dev \
-                     libboost-all-dev libncurses5-dev \
-                     libjemalloc-dev wget m4 autoconf automake libtool curl make g++ unzip
+                     libcurl4-openssl-dev libncurses5-dev libjemalloc-dev wget m4 autoconf automake libtool curl make \
+                     g++ unzip
+  - git clone https://github.com/google/protobuf.git
+  - cd protobuf
+  - git submodule update --init --recursive
+  - ./autogen.sh
+  - ./configure
+  - make && make check && sudo make install && sudo ldconfig # refresh shared library cache.
+#E: Unable to locate package  libprotobuf-dev
+#E: Unable to locate package  libboost-all-dev
+#E: Unable to locate package  libjemalloc-dev
   - sudo npm install --global coffeescript
   - ./configure --allow-fetch && make && make install
   
