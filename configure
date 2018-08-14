@@ -84,6 +84,9 @@ configure () {
         arm*)
             var_append LDFLAGS -ldl
             final_warning="ARM support is still experimental" ;;
+        aarch64-linux-*)
+            var_append LDFLAGS -ldl
+            final_warning="ARM support is still experimental" ;;
         *)
             error "unsupported architecture: $MACHINE"
     esac
