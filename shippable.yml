@@ -7,4 +7,5 @@ runtime:
   
 build:
  ci:
-- ./configure && make && make install
+  - ./configure && make && make install
+  
