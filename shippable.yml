@@ -7,7 +7,10 @@ runtime:
   
 build:
  ci:
-  - sudo apt-get update && sudo apt-get install autoconf automake libtool curl make g++ unzip
+  - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential protobuf-compiler python \
+                     libprotobuf-dev libcurl4-openssl-dev \
+                     libboost-all-dev libncurses5-dev \
+                     libjemalloc-dev wget m4 autoconf automake libtool curl make g++ unzip
   - sudo npm install --global coffeescript
   - ./configure --allow-fetch && make && make install
   
