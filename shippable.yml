@@ -7,5 +7,6 @@ runtime:
   
 build:
  ci:
-  - ./configure && make && make install
+  - sudo apt-get install autoconf automake libtool curl make g++ unzip
+  - ./configure --allow-fetch && make && make install
   
