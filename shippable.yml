@@ -7,9 +7,10 @@ runtime:
   
 build:
  ci:
-  - which wget
+  - which autoconf
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python \
-                     autoconf automake libtool curl make unzip
+                     automake libtool curl make unzip
+#E: Unable to locate package  autoconf                     
 #E: Unable to locate package  m4                     
 #E: Unable to locate package  wget                     
 #E: Unable to locate package  libjemalloc-dev                     
