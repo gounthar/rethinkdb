@@ -8,6 +8,10 @@ runtime:
 build:
  ci:
   - which autoconf
+  - which automake
+  - which curl
+  - which make
+  - which unzip
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python \
                      automake libtool curl make unzip
 #E: Unable to locate package  autoconf                     
