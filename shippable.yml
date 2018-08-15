@@ -8,7 +8,8 @@ runtime:
 build:
  ci:
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python \
-                     libncurses5-dev libjemalloc-dev wget m4 autoconf automake libtool curl make unzip
+                     libjemalloc-dev wget m4 autoconf automake libtool curl make unzip
+#E: Unable to locate package  libncurses5-dev                     
 #E: Unable to locate package  libcurl4-openssl-dev
 #E: Unable to locate package  g+                     
   - git clone https://github.com/google/protobuf.git
