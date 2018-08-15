@@ -9,7 +9,9 @@ build:
  ci:
   - wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/ccache/3.2.4-1/ccache_3.2.4.orig.tar.bz2
   - tar xfvj ccache_3.2.4.orig.tar.bz2
-  - ls -artl
+  - cd ccache-3.2.4
+  - ./configure --allow-fetch && make && sudo make install
+  - cd -
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python libtool 
 #E: Unable to locate package  libprotobuf-dev
 #E: Unable to locate package  libboost-all-dev
