@@ -16,7 +16,7 @@ build:
 #E: Unable to locate package  libprotobuf-dev
 #E: Unable to locate package  libboost-all-dev
 #E: Unable to locate package  libjemalloc-dev
-  - sudo npm install --global coffeescript@1.10.0 bluebird@2.9.32
+  - sudo npm install --global coffeescript@1.10.0 bluebird@2.9.32 browserify
   - sudo ./configure && make && make install
 #--allow-fetch
 #--fetch coffee  
