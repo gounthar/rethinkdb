@@ -9,7 +9,8 @@ build:
  ci:
   - which wget
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python \
-                     m4 autoconf automake libtool curl make unzip
+                     autoconf automake libtool curl make unzip
+#E: Unable to locate package  m4                     
 #E: Unable to locate package  wget                     
 #E: Unable to locate package  libjemalloc-dev                     
 #E: Unable to locate package  libncurses5-dev                     
