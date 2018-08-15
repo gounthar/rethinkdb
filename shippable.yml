@@ -17,5 +17,5 @@ build:
 #E: Unable to locate package  libboost-all-dev
 #E: Unable to locate package  libjemalloc-dev
   - sudo npm install --global coffeescript
-  - ./configure --allow-fetch && make && make install
+  - ./configure --allow-fetch --fetch coffee && make && make install
   
