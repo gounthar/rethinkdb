@@ -8,19 +8,6 @@ runtime:
 build:
  ci:
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python libtool
-#E: Unable to locate package  autoconf                     
-#E: Unable to locate package  m4                     
-#E: Unable to locate package  wget                     
-#E: Unable to locate package  libjemalloc-dev                     
-#E: Unable to locate package  libncurses5-dev                     
-#E: Unable to locate package  libcurl4-openssl-dev
-#E: Unable to locate package  g+                     
-  - git clone https://github.com/google/protobuf.git
-  - cd protobuf
-  - git submodule update --init --recursive
-  - ./autogen.sh
-  - ./configure
-  - make && make check && sudo make install && sudo ldconfig # refresh shared library cache.
 #E: Unable to locate package  libprotobuf-dev
 #E: Unable to locate package  libboost-all-dev
 #E: Unable to locate package  libjemalloc-dev
