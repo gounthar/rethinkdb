@@ -18,7 +18,7 @@ build:
   - cd external/bluebird_2.9.32/
   - sudo -E npm install -g npm && rm -rf node_modules package-lock.json
   - sudo mkdir -p /usr/lib/node_modules/.staging
-  - find . -name package-lock.json && npm --version && sudo -E npm install -g && cat /root/.npm/_logs/*log
+  - sudo -E npm install -g
   - cd -
   - sudo -E npm install --global coffeescript@1.10.0 bluebird@2.9.32 browserify@13.1.0
   - sudo -E ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost --debug-configure && sudo -E make && sudo make install
