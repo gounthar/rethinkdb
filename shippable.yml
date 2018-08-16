@@ -13,6 +13,12 @@ build:
   - ./configure && make && sudo make install
   - cd -
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python libtool 
+  - nvm install v0.10.0
+  - sudo apt-get install npm protobuf-compiler protobuf-c-compiler libprotobuf-dev libv8-dev libgoogle-perftools-dev libprotoc-dev default-jre time
+  - sudo npm install -g less@1.3.0
+  - sudo npm install -g coffee-script@1.4.0
+  - sudo npm install -g handlebars@1.0.10
+- sudo npm install -g mocha
 #E: Unable to locate package  libboost-all-dev
 #E: Unable to locate package  libjemalloc-dev
   - cd external/bluebird_2.9.32/
