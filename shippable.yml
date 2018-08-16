@@ -16,6 +16,8 @@ build:
 #E: Unable to locate package  libboost-all-dev
 #E: Unable to locate package  libjemalloc-dev
   - cd external/bluebird_2.9.32/
+  - ls -artl /usr/lib/node_modules/ /root/src/github.com/gounthar/rethinkdb/external/bluebird_2.9.32/node_modules/bluebird
+  - sudo mkdir -p /usr/lib/node_modules/.staging
   - sudo -E npm install -g
   - cd -
   - sudo -E npm install --global coffeescript@1.10.0 bluebird@2.9.32 browserify@13.1.0
