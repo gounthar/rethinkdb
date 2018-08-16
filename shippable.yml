@@ -18,6 +18,4 @@ build:
 #E: Unable to locate package  libjemalloc-dev
   - sudo npm install --global coffeescript@1.10.0 bluebird@2.9.32 browserify@13.1.0
   - sudo ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost && make && make install
-#--allow-fetch
-#--fetch coffee  
   
