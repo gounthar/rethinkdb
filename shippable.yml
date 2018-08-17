@@ -13,6 +13,7 @@ build:
   - ./configure && make && sudo make install
   - cd -
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python libtool 
+  - sudo -E npm install -g npm npm-cache
   - nvm install v10.9.0
   - sudo apt-get install protobuf-compiler protobuf-c-compiler libprotobuf-dev libgoogle-perftools-dev libprotoc-dev default-jre time
 #E: Unable to locate package libv8-dev  
@@ -24,7 +25,7 @@ build:
 #E: Unable to locate package  libjemalloc-dev
   - sudo -E npm install --global coffeescript@1.10.0 bluebird@2.9.32 browserify@13.1.0
   - cd external/bluebird_2.9.32/
-  - sudo -E npm install -g npm npm-cache && rm -rf node_modules package-lock.json
+  - rm -rf node_modules package-lock.json
   - sudo -E npm install -g
   - cd -
   - sudo -E ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost --debug-configure
