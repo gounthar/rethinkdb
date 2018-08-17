@@ -14,7 +14,7 @@ build:
   - cd -
   - sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install build-essential g++ protobuf-compiler python libtool 
   - sudo -E npm install -g npm npm-cache
-  - sudo nvm install v10.9.0 && sudo mv /usr/bin/npm /usr/bin/npm.save && sudo ln -s /root/.nvm/versions/node/v10.9.0/bin/npm /usr/bin/npm
+  - sudo -E nvm install v10.9.0 && sudo mv /usr/bin/npm /usr/bin/npm.save && sudo ln -s /root/.nvm/versions/node/v10.9.0/bin/npm /usr/bin/npm
   - /usr/bin/npm --version
   - sudo apt-get install protobuf-compiler protobuf-c-compiler libprotobuf-dev libgoogle-perftools-dev libprotoc-dev default-jre time
 #E: Unable to locate package libv8-dev  
