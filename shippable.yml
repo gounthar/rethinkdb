@@ -30,5 +30,6 @@ build:
   - cd -
   - sudo -E ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost
   #--debug-configure
+  - which npm
   - sudo -E make && sudo make install
   
