@@ -23,10 +23,10 @@ build:
 #E: Unable to locate package  libboost-all-dev
 #E: Unable to locate package  libjemalloc-dev
   - sudo -E npm install --global coffeescript@1.10.0 bluebird@2.9.32 browserify@13.1.0
-  - sudo -E ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost 
   - cd external/bluebird_2.9.32/
   - sudo -E npm install -g npm npm-cache && rm -rf node_modules package-lock.json
   - sudo -E npm install -g
   - cd -
+  - sudo -E ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost --debug-configure
   - sudo -E make && sudo make install
   
