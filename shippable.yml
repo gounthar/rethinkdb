@@ -28,6 +28,7 @@ build:
   - rm -rf node_modules package-lock.json
   - sudo -E npm install -g
   - cd -
-  - sudo -E ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost --debug-configure
+  - sudo -E ./configure --fetch protobuf --fetch curl --fetch jemalloc --fetch boost
+  #--debug-configure
   - sudo -E make && sudo make install
   
