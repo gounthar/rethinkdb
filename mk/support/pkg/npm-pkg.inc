@@ -8,6 +8,7 @@ npm_conf=$(niceabspath "$conf_dir/npm.conf")
 
 npm () {
     cache_dir=$(mktemp -d "$external_dir/npm_cache-XXXXXXXX")
+    rm -rf node_modules package-lock.json
     "$NPM" --userconfig "$npm_conf" --cache "$cache_dir" "$@"
     rm -rf "$cache_dir"
 }
@@ -26,6 +27,7 @@ pkg_fetch () {
     cp "$pkg_dir/$npm_package.shrinkwrap" "$tmp_dir/npm-shrinkwrap.json"
     package_json > "$tmp_dir/package.json"
     mkdir "$tmp_dir/node_modules"
+    in_dir "$tmp_dir" rm -rf node_modules package-lock.json
     in_dir "$tmp_dir" npm install
     in_dir "$tmp_dir" npm pack
     in_dir "$tmp_dir" tar xf packed-$npm_package-$version.tgz
