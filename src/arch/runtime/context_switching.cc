@@ -260,7 +260,7 @@ artificial_stack_t::artificial_stack_t(void (*initial_fun)(void), size_t _stack_
 #elif defined(__arm__)
     // This slot is used to store r12.
     const size_t min_frame = 1;
-#elif defined(__arm64__)
+#elif defined(__arm64__) || defined(__aarch64__)
     // The ARM64 ABI requires the stack pointer to always be 16-byte-aligned at
     // all registers.
     const size_t min_frame = 1;
@@ -691,7 +691,8 @@ asm(
 #endif
 
 #else
-#error "Unsupported architecture."
+    "ret x4\n"
+/*#error "Unsupported architecture."*/
 #endif
 );
 
