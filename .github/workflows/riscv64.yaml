@@ -1,0 +1,38 @@
+name: Build RethinkDB (riscv64)
+
+on:
+  push:
+    branches: [ci/riscv64-build-proof]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build RethinkDB (riscv64)
+    runs-on: ubuntu-24.04-riscv
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential g++ protobuf-compiler \
+            python3 libcurl4-openssl-dev libboost-all-dev \
+            libncurses5-dev libjemalloc-dev libssl-dev \
+            wget m4 libprotobuf-dev
+
+      - name: Configure
+        run: ./configure --allow-fetch
+
+      - name: Build
+        run: /usr/bin/time -v make -j$(nproc) 2>&1
+
+      - name: Verify
+        run: |
+          file build/release/rethinkdb
+          ls -lh build/release/rethinkdb
+          build/release/rethinkdb --version || true
